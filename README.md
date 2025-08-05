@@ -1,3 +1,3 @@
 # developer-guides
 
-A collection of guides I've written as I've been learning programming.
+A growing collection of guides I write as I learn new things about programming.
