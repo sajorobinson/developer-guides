@@ -28,7 +28,7 @@ TypeScript helps catch bugs before runtime, improves editor support through auto
 - Access to the **Terminal**
 - **curl** installed (pre-installed on most macOS systems)
 
-> **Note**: No prior installation of Node.js is required. This guide will walk you through installation.
+> Note: No prior installation of Node.js is required. This guide will walk you through installation.
 
 ## 1: Install NVM (Node Version Manager)
 
@@ -97,7 +97,7 @@ Once the project directory is created, you're ready to initialize the project wi
 npm init -y
 ```
 
-> **Note**: The `-y` flag means initialization automatically responds "yes" to any prompts posed by npm.
+> Note: The `-y` flag means initialization automatically responds "yes" to any prompts posed by npm.
 
 You should see a message like the following print to the terminal:
 
@@ -141,7 +141,7 @@ npm install typescript
 
 ## 6: Install `@types/node`
 
-Next, you need to install the `@types/node` package, which allows the TypeScript compiler to understand the types fo built-in Node features (`process`, `fs`, `http`, etc.)
+Next, you need to install the `@types/node` package, which allows the TypeScript compiler to understand the types for built-in Node features (`process`, `fs`, `http`, etc.)
 
 ```sh
 npm install --save-dev @types/node
