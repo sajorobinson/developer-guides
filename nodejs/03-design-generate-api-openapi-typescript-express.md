@@ -38,7 +38,15 @@ Why exactly should you use an OpenAPI file?
 - **Consistency**: Reduces guesswork across teams.
 - **Automation**: Enables code generation, testing, and documentation.
 
-We'll go into more depth about the automation benefits OpenAPI provides, but don't underestimate (especially if you're making enterprise software) the benefit of **clarity** and **consistency**. It's common for multiple teams to interact with an API. Your API might be used by developers, QA, customer success, sales engineers, and support. A single source of truth makes it easier for everyone to stay aligned.
+We'll go into more depth about the automation benefits OpenAPI provides, but don't underestimate (especially if you're making enterprise software) the benefit of **clarity** and **consistency**. It's common for multiple teams to interact with an API. Your API might be used by:
+
+- Developers
+- QA
+- Customer success
+- Sales engineers
+- Support
+
+A single source of truth makes it easier for everyone to stay aligned.
 
 ### Docs-first API design
 
