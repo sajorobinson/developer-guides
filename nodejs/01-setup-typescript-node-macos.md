@@ -1,4 +1,4 @@
-# Set up a TypeScript & Node.js environment on macOS (with NVM)
+# Set up a TypeScript and Node.js environment on macOS (with NVM)
 
 Want to write backend code with TypeScript and Node.js on macOS?
 
@@ -12,7 +12,7 @@ This guide walks you through:
 
 ## Series index
 
-1. **Set up a TypeScript & Node.js environment on macOS (with NVM)** (you are here)
+1. **Set up a TypeScript and Node.js environment on macOS (with NVM)** (you are here)
 2. [Build a web service with TypeScript, Node.js, and Express](02-build-web-service-typescript-node-express.md)
 3. [Design and generate an API with OpenAPI, TypeScript, and Express](03-design-generate-api-openapi-typescript-express.md)
 
