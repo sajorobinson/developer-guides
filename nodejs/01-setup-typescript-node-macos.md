@@ -13,8 +13,8 @@ This guide walks you through:
 ## Series index
 
 1. **Set up a TypeScript & Node.js environment on macOS (with NVM)** (you are here)
-2. [Build a web service with TypeScript, Node.js, and Express](build-web-service-typescript-node-express.md)
-3. [Design and generate an API with OpenAPI, TypeScript, and Express](design-generate-api-openapi-typescript-express.md)
+2. [Build a web service with TypeScript, Node.js, and Express](02-build-web-service-typescript-node-express.md)
+3. [Design and generate an API with OpenAPI, TypeScript, and Express](03-design-generate-api-openapi-typescript-express.md)
 
 ---
 
