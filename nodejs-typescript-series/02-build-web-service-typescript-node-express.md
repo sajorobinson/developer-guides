@@ -34,7 +34,7 @@ Express is essentially a thin layer on top of Node’s built-in `http` module. I
 - Process incoming data (like JSON in a request body)
 - Use middleware for logging, validation, authentication, and more
 
-### Why Use Express?
+### Why use Express?
 
 Express simplifies development by wrapping Node's lower-level `http` module, reducing the need for repetitive and boilerplate code.
 
@@ -96,7 +96,7 @@ npm install express
 npm install --save-dev @types/express
 ```
 
-## 2: Define Your First Route
+## 2: Define your first route
 
 Create a new file named `src/server.ts`:
 
@@ -115,7 +115,7 @@ app.listen(port, () => {
 });
 ```
 
-## 3: Compile & Run
+## 3: Compile and run
 
 ```sh
 npm run build
