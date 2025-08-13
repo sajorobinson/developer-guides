@@ -1,4 +1,3 @@
-
 # Build a web service with TypeScript, Node.js, and Express
 
 Want to build a web service with TypeScript, Node.js, and Express?
@@ -10,6 +9,16 @@ This guide walks you through:
 1. Installing Express via npm
 2. Defining your first endpoint
 3. Running your web service and testing your endpoint
+
+---
+
+## Series index
+
+1. [Set up a TypeScript & Node.js environment on macOS (with NVM)](setup-typescript-node-macos.md)
+2. **Build a web service with TypeScript, Node.js, and Express** (you are here)
+3. [Design and generate an API with OpenAPI, TypeScript, and Express](design-generate-api-openapi-typescript-express.md)
+
+---
 
 ## Overview
 

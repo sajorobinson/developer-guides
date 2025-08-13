@@ -8,6 +8,16 @@ This guide walks you through:
 2. Setting up TypeScript for local development
 3. Compiling your first `.ts` file for backend or CLI use
 
+---
+
+## Series index
+
+1. **Set up a TypeScript & Node.js environment on macOS (with NVM)** (you are here)
+2. [Build a web service with TypeScript, Node.js, and Express](build-web-service-typescript-node-express.md)
+3. [Design and generate an API with OpenAPI, TypeScript, and Express](design-generate-api-openapi-typescript-express.md)
+
+---
+
 ## Overview
 
 ### What is Node.js?
@@ -117,7 +127,7 @@ Wrote to /Users/sam/Desktop/my-ts-project/package.json:
 }
 ```
 
-This means that npm successfully created your project with a single file: `package.json`. 
+This means that npm successfully created your project with a single file: `package.json`.
 
 ## 5: Install TypeScript
 
@@ -128,7 +138,7 @@ npm install --save-dev typescript
 ```
 
 ### Why `--save-dev` instead of `--save`?
- 
+
 The `--save-dev` flag tells `npm` that TypeScript is only needed during development for compiling `.ts` files to `.js` files.
 
 By contrast, running this (`--save` is the default behavior and is therefore not included):
@@ -157,7 +167,7 @@ The next step is to generate a basic `tsconfig.json` file.
 npx tsc --init
 ```
 
-This command instructs the TypeScript compiler (`tsc`) to create a new `tsconfig.json` file in the root of the project. This file is responsible for: 
+This command instructs the TypeScript compiler (`tsc`) to create a new `tsconfig.json` file in the root of the project. This file is responsible for:
 
 - Defining how TypeScript should interpret and compile the code.
 - Enabling features like type-checking, strict mode, module resolution, output paths, etc.
