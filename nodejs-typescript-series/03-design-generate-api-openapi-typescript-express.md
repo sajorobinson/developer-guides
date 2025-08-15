@@ -63,28 +63,155 @@ OpenAPI can generate code automatically for you:
 
 ## 1: Create your OpenAPI file
 
-- Start from a template
-- Explain structure and maintainability choices
+We’ll start by creating a minimal `openapi.yaml` file in the root of your project:
+
+```yaml
+openapi: 3.0.3
+info:
+  title: Example Todo API
+  version: 1.0.0
+  description: An API for managing todo items.
+servers:
+  - url: http://localhost:3000
+paths:
+  /todos:
+    get:
+      summary: Get all todos
+      operationId: getTodos
+      responses:
+        '200':
+          description: A list of todo items.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Todo'
+  /todos/{id}:
+    get:
+      summary: Get a single todo by ID
+      operationId: getTodoById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A single todo item.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Todo'
+        '404':
+          description: Todo not found.
+components:
+  schemas:
+    Todo:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        completed:
+          type: boolean
+```
+
+This spec defines two endpoints:
+
+- `GET /todos` — returns a list of todos.
+- `GET /todos/{id}` — returns a single todo by its ID.
 
 ## 2: Install and configure `openapi-generator-cli`
 
-- Installation via npm
-- Minimal config for our needs
+We’ll use OpenAPI Generator to turn our YAML file into TypeScript + Express code.
+
+Install globally via npm:
+
+```sh
+npm install @openapitools/openapi-generator-cli -g
+```
+
+Check to make sure it's installed:
+
+```sh
+openapi-generator-cli version
+```
 
 ## 3: Generate the server stub and SDK
 
-- Run generation command
-- Review the generated structure and files
+From the project root:
+
+```sh
+openapi-generator-cli generate \
+  -i openapi.yaml \
+  -g typescript-express-server \
+  -o generated/server
+```
+
+This tells the generator:
+
+- `-i` — the input OpenAPI file.
+- `-g` — the generator type (typescript-express-server).
+- `-o` — the output directory.
+
+Inside generated/server, you’ll now have:
+
+- `controllers/` — empty methods for each operation.
+- `routes.ts` — Express route wiring.
+- `models/` — TypeScript interfaces from your schemas.
 
 ## 4: Implement an endpoint
 
-- Add real logic to one generated route
-- Show how the generated interfaces help with type safety
+Open `controllers/TodosController.ts` and find `getTodos`:
+
+```ts
+export function getTodos(req: Request, res: Response): void {
+  res.status(200).send([
+    { id: '1', title: 'Write OpenAPI guide', completed: false },
+    { id: '2', title: 'Implement example endpoint', completed: true },
+  ]);
+}
+```
+
+The generated types ensure your response matches the Todo schema in the OpenAPI spec.
 
 ## 5: Test the endpoint
 
-- Use Postman (or cURL) to send requests and verify responses
+Run the server:
 
-## 6: Recap what’s now possible
+```sh
+npm start
+```
 
-- Next steps (connecting data sources, adding more endpoints)
+Test with `curl`:
+
+```sh
+curl http://localhost:3000/todos
+```
+
+Expected output:
+
+```json
+[
+  { "id": "1", "title": "Write OpenAPI guide", "completed": false },
+  { "id": "2", "title": "Implement example endpoint", "completed": true }
+]
+```
+
+## 6: What’s now possible?
+
+At this point you have:
+
+- An OpenAPI spec describing your API.
+- Auto-generated server stubs with TypeScript typing.
+- A working Express endpoint.
+
+From here you can:
+
+- Connect to a database.
+- Add authentication.
+- Expand the spec with more endpoints.
+- Generate SDKs for different languages (-g typescript-fetch, -g python, etc.).
